@@ -58,6 +58,17 @@ public class TollboothTest {
         float newEarnings = tollboothOne.chargeToll(vehicleTwo);
         assertThat(newEarnings, is(50F));
     }
+
+    @Test
+    @DisplayName("Should charge 50 per axle a truck")
+    void testChargeToll_truck() {
+        Vehicle vehicleThree = new Vehicle();
+        vehicleThree.setPlate("DEF123");
+        vehicleThree.setType(VehicleKind.TRUCK);
+        int axles = 2;
+        float newEarnings = tollboothOne.chargeToll(vehicleThree, axles);
+        assertThat(newEarnings, is(50F));
+    }
 }
 
 
