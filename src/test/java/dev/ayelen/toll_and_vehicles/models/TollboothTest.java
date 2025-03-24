@@ -3,6 +3,9 @@ package dev.ayelen.toll_and_vehicles.models;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 public class TollboothTest {
 
     @Test
@@ -16,7 +19,7 @@ public class TollboothTest {
         float earnings = tollboothOne.getEarnings();
         assertThat(name, is("Tollbooth 1"));
         assertThat(city, is("City 1"));        
-        assertThat(earnings, is(0));
+        assertThat(earnings, is(0F));
     }
     
 
