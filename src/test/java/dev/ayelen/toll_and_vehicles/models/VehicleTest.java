@@ -14,7 +14,9 @@ public class VehicleTest {
         Vehicle vehicleOne = new Vehicle();
         vehicleOne.setPlate("ABC123");
         vehicleOne.setType(VehicleType.CAR);
-        assertThat(vehicleOne.getPlate()).isEqualTo("ABC123");
-        assertThat(vehicleOne.getType()).isEqualTo(VehicleType.CAR);        
+        String plate = vehicleOne.getPlate();
+        VehicleType type = vehicleOne.getType();
+        assertThat(plate, is("ABC123"));
+        assertThat(type, is(VehicleType.CAR));        
     }
 }
