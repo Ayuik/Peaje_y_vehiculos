@@ -40,12 +40,14 @@ public class Tollbooth implements InterfaceChargeToll {
     }
 
     @Override
-    public float chargeToll(Vehicle vehicle) {
+    public float chargeToll(Vehicle vehicle, int axles) {
         if (vehicle.getType() == VehicleKind.CAR) {
             return Toll.CAR.getValue();
         } else if (vehicle.getType() == VehicleKind.MOTORCYCLE) {
             return Toll.MOTORCYCLE.getValue();
 
+        }else if (vehicle.getType() == VehicleKind.TRUCK) {
+            return Toll.TRUCKAXLE.getValue() * axles;
         }
         return 0F;
     }
