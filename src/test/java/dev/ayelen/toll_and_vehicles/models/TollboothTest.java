@@ -46,7 +46,7 @@ public class TollboothTest {
         Vehicle vehicleOne = new Vehicle();
         vehicleOne.setPlate("ABC123");
         vehicleOne.setType(VehicleType.CAR);
-        float newEarnings = tollboothOne.chargeToll_car(vehicleOne, Toll.CAR);
+        float newEarnings = tollboothOne.chargeToll(vehicleOne, Toll.CAR);
         assertThat(newEarnings, is(100F));
     }
 
@@ -56,7 +56,7 @@ public class TollboothTest {
         Vehicle vehicleTwo = new Vehicle();
         vehicleTwo.setPlate("DEF123");
         vehicleTwo.setType(VehicleType.MOTORCYCLE);
-        float newEarnings = tollboothOne.chargeToll_motorcycle(vehicleTwo, Toll.MOTORCYCLE);
+        float newEarnings = tollboothOne.chargeToll(vehicleTwo, Toll.MOTORCYCLE);
         assertThat(newEarnings, is(50F));
     }
 }
