@@ -1,15 +1,13 @@
 package dev.ayelen.toll_and_vehicles.models;
 
-import dev.ayelen.toll_and_vehicles.enums.VehicleType;
+import dev.ayelen.toll_and_vehicles.enums.VehicleKind;
 
 public class Vehicle {
     protected String plate;
-    protected VehicleType type;
+    protected VehicleKind type;
 
-    public Vehicle(){
-        this.plate = plate;
-        this.type = type;
-    }
+    public Vehicle(){}       
+    
 
     public String getPlate() {
         return plate;
@@ -19,11 +17,11 @@ public class Vehicle {
         this.plate = plate;
     }
 
-    public VehicleType getType() {
+    public VehicleKind getType() {
         return type;
     }
 
-    public void setType(VehicleType type) { 
+    public void setType(VehicleKind type) { 
         this.type = type;  
     }
 }

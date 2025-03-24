@@ -2,7 +2,7 @@ package dev.ayelen.toll_and_vehicles.models;
 
 import dev.ayelen.toll_and_vehicles.InterfaceChargeToll;
 import dev.ayelen.toll_and_vehicles.enums.Toll;
-import dev.ayelen.toll_and_vehicles.enums.VehicleType;
+import dev.ayelen.toll_and_vehicles.enums.VehicleKind;
 
 public class Tollbooth implements InterfaceChargeToll {
     protected String name;
@@ -41,9 +41,9 @@ public class Tollbooth implements InterfaceChargeToll {
 
     @Override
     public float chargeToll(Vehicle vehicle) {
-        if (vehicle.getType() == VehicleType.CAR) {
+        if (vehicle.getType() == VehicleKind.CAR) {
             return Toll.CAR.getValue();
-        } else if (vehicle.getType() == VehicleType.MOTORCYCLE) {
+        } else if (vehicle.getType() == VehicleKind.MOTORCYCLE) {
             return Toll.MOTORCYCLE.getValue();
 
         }

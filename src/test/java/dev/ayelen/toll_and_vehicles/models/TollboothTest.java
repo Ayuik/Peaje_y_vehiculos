@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import dev.ayelen.toll_and_vehicles.enums.VehicleType;
+import dev.ayelen.toll_and_vehicles.enums.VehicleKind;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -44,7 +44,7 @@ public class TollboothTest {
     void testChargeToll_car() {
         Vehicle vehicleOne = new Vehicle();
         vehicleOne.setPlate("ABC123");
-        vehicleOne.setType(VehicleType.CAR);
+        vehicleOne.setType(VehicleKind.CAR);
         float newEarnings = tollboothOne.chargeToll(vehicleOne);
         assertThat(newEarnings, is(100F));
     }
@@ -54,7 +54,7 @@ public class TollboothTest {
     void testChargeToll_motorcycle() {
         Vehicle vehicleTwo = new Vehicle();
         vehicleTwo.setPlate("DEF123");
-        vehicleTwo.setType(VehicleType.MOTORCYCLE);
+        vehicleTwo.setType(VehicleKind.MOTORCYCLE);
         float newEarnings = tollboothOne.chargeToll(vehicleTwo);
         assertThat(newEarnings, is(50F));
     }
