@@ -31,4 +31,8 @@ public class Tollbooth {
         return earnings;
     }
 
+    public void updateEarnings(float newEarnings) {
+        this.earnings += newEarnings;
+    }
+
 }
