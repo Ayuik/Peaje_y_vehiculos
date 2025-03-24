@@ -67,7 +67,7 @@ public class TollboothTest {
         vehicleThree.setType(VehicleKind.TRUCK);
         int axles = 2;
         float newEarnings = tollboothOne.chargeToll(vehicleThree, axles);
-        assertThat(newEarnings, is(50F));
+        assertThat(newEarnings, is(100F));
     }
 }
 
