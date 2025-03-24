@@ -21,6 +21,13 @@ public class TollboothTest {
         assertThat(city, is("City 1"));        
         assertThat(earnings, is(0F));
     }
-    
 
+    @Test
+    @DisplayName("Should update de value of earnings")
+    void testUpdateEarnings() {
+        float newEarnings = 50F;
+        tollboothOne.updateEarnings(newEarnings);
+        float earnings = tollboothOne.getEarnings();
+        assertThat(earnings, is(50F));
+    }
 }
