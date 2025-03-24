@@ -1,27 +1,31 @@
 package dev.ayelen.toll_and_vehicles.models;
 
-public class Tollbooth {
+import dev.ayelen.toll_and_vehicles.InterfaceChargeToll;
+import dev.ayelen.toll_and_vehicles.enums.Toll;
+import dev.ayelen.toll_and_vehicles.enums.VehicleType;
+
+public class Tollbooth implements InterfaceChargeToll {
     protected String name;
     protected String city;
     protected float earnings;
 
     public Tollbooth() {
-        this.name = name;       
+        this.name = name;
         this.city = city;
         this.earnings = 0F;
     }
 
     public String getName() {
         return name;
-    }   
+    }
 
     public void setName(String name) {
         this.name = name;
-    }   
+    }
 
     public String getCity() {
         return city;
-    }   
+    }
 
     public void setCity(String city) {
         this.city = city;
@@ -33,6 +37,14 @@ public class Tollbooth {
 
     public void updateEarnings(float newEarnings) {
         this.earnings += newEarnings;
+    }
+
+    @Override
+    public float chargeToll_car(Vehicle vehicle, Toll toll) {
+        if (vehicle.getType() == VehicleType.CAR) {
+            return Toll.CAR.getValue();
+        }
+        return earnings;
     }
 
 }

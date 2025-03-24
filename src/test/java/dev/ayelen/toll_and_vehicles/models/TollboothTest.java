@@ -50,3 +50,5 @@ public class TollboothTest {
         assertThat(newEarnings, is(100F));
     }
 }
+
+
