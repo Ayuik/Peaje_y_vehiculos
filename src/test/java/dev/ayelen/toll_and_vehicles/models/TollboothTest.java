@@ -45,7 +45,8 @@ public class TollboothTest {
         Vehicle vehicleOne = new Vehicle();
         vehicleOne.setPlate("ABC123");
         vehicleOne.setType(VehicleKind.CAR);
-        float newEarnings = tollboothOne.chargeToll(vehicleOne);
+        int axles = 1;
+        float newEarnings = tollboothOne.chargeToll(vehicleOne, axles);
         assertThat(newEarnings, is(100F));
     }
 
@@ -55,7 +56,8 @@ public class TollboothTest {
         Vehicle vehicleTwo = new Vehicle();
         vehicleTwo.setPlate("DEF123");
         vehicleTwo.setType(VehicleKind.MOTORCYCLE);
-        float newEarnings = tollboothOne.chargeToll(vehicleTwo);
+        int axles = 1;
+        float newEarnings = tollboothOne.chargeToll(vehicleTwo, axles);
         assertThat(newEarnings, is(50F));
     }
 
