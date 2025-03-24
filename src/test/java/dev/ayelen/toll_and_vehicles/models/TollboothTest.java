@@ -36,4 +36,14 @@ public class TollboothTest {
         float earnings = tollboothOne.getEarnings();
         assertThat(earnings, is(50F));
     }
+
+    @Test
+    @DisplayName("Should charge 100 a car")
+    void testChargeToll_car() {
+        Vehicle vehicleOne = new Vehicle("ABC123", VehicleType.CAR);
+        float newEarnings = tollboothOne.chargeToll_car(vehicleOne, Toll);
+        tollboothOne.updateEarnings(newEarnings);
+        float earnings = tollboothOne.getEarnings();
+        assertThat(earnings, is(150F));
+    }
 }
