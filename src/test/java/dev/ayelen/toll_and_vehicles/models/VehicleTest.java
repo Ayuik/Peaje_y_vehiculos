@@ -3,6 +3,8 @@ package dev.ayelen.toll_and_vehicles.models;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import dev.ayelen.toll_and_vehicles.enums.VehicleType;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
