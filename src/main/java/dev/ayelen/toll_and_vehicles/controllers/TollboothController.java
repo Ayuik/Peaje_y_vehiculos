@@ -13,7 +13,7 @@ public class TollboothController {
         this.tollbooth = tollbooth;
     }
 
-    public void saveVehicle(String plate, int type, int axles) {
+    public float saveVehicle(String plate, int type, int axles) {
         if (type == 1) {
             kind = VehicleKind.CAR;
         }
@@ -30,6 +30,8 @@ public class TollboothController {
         newVehicle.setType(kind);
 
         tollbooth.addVehicle(newVehicle);
+
+        return tollbooth.chargeToll(newVehicle, axles);
     }
 
 }
