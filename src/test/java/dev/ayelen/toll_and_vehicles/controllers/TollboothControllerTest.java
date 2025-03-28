@@ -28,4 +28,16 @@ public class TollboothControllerTest {
 
     }
 
+    @Test
+    @DisplayName("Should return the toll for the created vehicle")
+    void testSaveVehicle_providetoll() {
+        int axles = 2;
+        String plate = "123asd";
+        int type = 3;
+        Tollbooth tollbooth = new Tollbooth();
+        TollboothController controller = new TollboothController(tollbooth);
+        float toll = controller.saveVehicle(plate, type, axles);
+        assertThat(toll, is(100F));
+    }
+
 }
