@@ -23,7 +23,7 @@ public class TollboothControllerTest {
         Tollbooth tollbooth = new Tollbooth();
         TollboothController controller = new TollboothController(tollbooth);
         controller.saveVehicle(plate, type, axles);
-        List list = tollbooth.getVehiclesList();
+        List<Vehicle> list = tollbooth.getVehiclesList();
         assertThat(list.size(), is(1));
 
     }

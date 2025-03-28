@@ -81,7 +81,7 @@ public class TollboothTest {
         vehicleOne.setPlate("ABC123");
         vehicleOne.setType(VehicleKind.CAR);
         tollboothOne.addVehicle(vehicleOne);
-        List list = tollboothOne.getVehiclesList();       
+        List<Vehicle> list = tollboothOne.getVehiclesList();       
         assertThat(list.size(), is(1));
         assertThat(list.contains(vehicleOne), is(true));
     }
