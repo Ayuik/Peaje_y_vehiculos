@@ -11,7 +11,7 @@ public class Tollbooth implements InterfaceChargeToll {
     protected String name;
     protected String city;
     protected float earnings;
-    protected List vehiclesList = new ArrayList<>();
+    protected List<Vehicle> vehiclesList = new ArrayList<>();
 
     public Tollbooth() {
         this.name = name;
@@ -60,7 +60,7 @@ public class Tollbooth implements InterfaceChargeToll {
         vehiclesList.add(vehicle);
     }
 
-    public List getVehiclesList() {
+    public List<Vehicle> getVehiclesList() {
         return vehiclesList;
     }
 
