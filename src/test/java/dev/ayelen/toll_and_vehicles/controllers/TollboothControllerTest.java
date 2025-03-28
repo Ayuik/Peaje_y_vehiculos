@@ -44,4 +44,15 @@ public class TollboothControllerTest {
         assertThat(toll, is(100F));
     }
 
+    @Test
+    @DisplayName("Should update earnings")
+    void testSaveVehicle_updateearnings() {
+        int axles = 2;
+        String plate = "123asd";
+        int type = 3;
+        TollboothController controller = new TollboothController(tollbooth);
+        controller.saveVehicle(plate, type, axles);
+        assertThat(tollbooth.getEarnings(), is(100F));
+    }
+
 }
