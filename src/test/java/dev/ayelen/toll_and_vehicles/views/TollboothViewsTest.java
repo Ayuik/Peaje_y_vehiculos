@@ -25,4 +25,23 @@ public class TollboothViewsTest {
         System.setOut(System.out);
     }
 
+    @Test
+    @DisplayName("Should print correct output")
+    void testOptionsPrintsOutput() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        TollboothViews views = new TollboothViews();
+        views.options();
+        String expectedOutput = "=======================================";
+        String expectedOutput2 ="1. Realizar cobros";
+        String expectedOutput3 ="2. Cierre del día";
+        String expectedOutput4 ="3. Salir";
+        assertTrue(outContent.toString().contains(expectedOutput));
+        assertTrue(outContent.toString().contains(expectedOutput2));
+        assertTrue(outContent.toString().contains(expectedOutput3));
+        assertTrue(outContent.toString().contains(expectedOutput4));
+
+        System.setOut(System.out);
+    }
+
 }
