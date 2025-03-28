@@ -9,6 +9,8 @@ import dev.ayelen.toll_and_vehicles.enums.VehicleKind;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
+import java.util.List;
+
 public class TollboothTest {
     Tollbooth tollboothOne; 
 
@@ -70,6 +72,18 @@ public class TollboothTest {
         int axles = 2;
         float newEarnings = tollboothOne.chargeToll(vehicleThree, axles);
         assertThat(newEarnings, is(100F));
+    }
+
+    @Test
+    @DisplayName("Should add a vehicle to the list of vehicles")
+    void testAddVehicle() {
+        Vehicle vehicleOne = new Vehicle();
+        vehicleOne.setPlate("ABC123");
+        vehicleOne.setType(VehicleKind.CAR);
+        tollboothOne.addVehicle(vehicleOne);
+        List list = tollboothOne.getVehiclesList();       
+        assertThat(list.size(), is(1));
+        assertThat(list.contains(vehicleOne), is(true));
     }
 }
 
