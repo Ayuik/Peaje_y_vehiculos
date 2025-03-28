@@ -31,7 +31,11 @@ public class TollboothController {
 
         tollbooth.addVehicle(newVehicle);
 
-        return tollbooth.chargeToll(newVehicle, axles);
+        float toll = tollbooth.chargeToll(newVehicle, axles);
+
+        tollbooth.updateEarnings(toll);
+        
+        return toll;
     }
 
 }
