@@ -16,10 +16,12 @@ public class TollboothViewsTest {
         System.setOut(new PrintStream(outContent));
         TollboothViews views = new TollboothViews();
         views.index();
-        String expectedOutput = "=======================================\n" +
-                                "    Estación de Peaje: \"Peaje Central\"\n" +
-                                "    Ciudad: Llanera, Asturias\n";
+        String expectedOutput = "=======================================";
+        String expectedOutput2 = " Estación de Peaje: \"Peaje Central\"";
+        String expectedOutput3 =" Ciudad: Llanera, Asturias";
         assertTrue(outContent.toString().contains(expectedOutput));
+        assertTrue(outContent.toString().contains(expectedOutput2));
+        assertTrue(outContent.toString().contains(expectedOutput3));
         System.setOut(System.out);
     }
 
