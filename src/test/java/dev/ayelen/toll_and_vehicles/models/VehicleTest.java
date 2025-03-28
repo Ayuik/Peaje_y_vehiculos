@@ -3,7 +3,7 @@ package dev.ayelen.toll_and_vehicles.models;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import dev.ayelen.toll_and_vehicles.enums.VehicleType;
+import dev.ayelen.toll_and_vehicles.enums.VehicleKind;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -15,10 +15,10 @@ public class VehicleTest {
     void testVehicle() {
         Vehicle vehicleOne = new Vehicle();
         vehicleOne.setPlate("ABC123");
-        vehicleOne.setType(VehicleType.CAR);
+        vehicleOne.setType(VehicleKind.CAR);
         String plate = vehicleOne.getPlate();
-        VehicleType type = vehicleOne.getType();
+        VehicleKind type = vehicleOne.getType();
         assertThat(plate, is("ABC123"));
-        assertThat(type, is(VehicleType.CAR));        
+        assertThat(type, is(VehicleKind.CAR));        
     }
 }
