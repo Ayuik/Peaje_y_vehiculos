@@ -2,6 +2,7 @@ package dev.ayelen.toll_and_vehicles.controllers;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.mockito.Mockito.*;
 
 import java.util.List;
 
@@ -53,6 +54,14 @@ public class TollboothControllerTest {
         TollboothController controller = new TollboothController(tollbooth);
         controller.saveVehicle(plate, type, axles);
         assertThat(tollbooth.getEarnings(), is(100F));
+    }
+
+    @Test
+    @DisplayName("Should ask Views to run index")
+    void testIndex() {
+        TollboothViews mockViews = mock(TollboothViews.class);
+        controller.index();
+        verify(mockViews).index();
     }
 
 }
