@@ -53,7 +53,7 @@ public class TollboothControllerTest {
         int axles = 2;
         String plate = "123asd";
         int type = 3;
-        TollboothController controller = new TollboothController(tollbooth);
+        TollboothController controller = new TollboothController(tollbooth, views);
         controller.saveVehicle(plate, type, axles);
         assertThat(tollbooth.getEarnings(), is(100F));
     }
