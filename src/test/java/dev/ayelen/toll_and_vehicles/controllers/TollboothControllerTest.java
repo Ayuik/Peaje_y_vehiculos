@@ -12,15 +12,17 @@ import org.junit.jupiter.api.Test;
 
 import dev.ayelen.toll_and_vehicles.models.Tollbooth;
 import dev.ayelen.toll_and_vehicles.models.Vehicle;
+import dev.ayelen.toll_and_vehicles.views.TollboothViews;
 
 public class TollboothControllerTest {
     Tollbooth tollbooth;
     TollboothController controller;
+    TollboothViews views;
 
     @BeforeEach
     void setUp() {
         tollbooth = new Tollbooth();
-        controller = new TollboothController(tollbooth);
+        controller = new TollboothController(tollbooth, views);
     }
 
     @Test
@@ -60,6 +62,7 @@ public class TollboothControllerTest {
     @DisplayName("Should ask Views to run index")
     void testIndex() {
         TollboothViews mockViews = mock(TollboothViews.class);
+        TollboothController controller = new TollboothController(tollbooth, mockViews); 
         controller.index();
         verify(mockViews).index();
     }
